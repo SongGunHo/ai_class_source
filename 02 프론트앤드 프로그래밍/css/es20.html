@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <style>
+            .box {
+                width: 100px;
+                height: 100px;
+
+            }
+            .box1 {
+                background: green;
+                position: relative;
+                left: 100px;
+                top: 100px;
+
+            }
+            .box2 {
+                background: navy;
+                position: relative;
+                left: 100px;
+                /*top:100px*/
+                bottom: 100px;
+            }
+            .box3 {
+                background: orange;
+                position: absolute;
+                left: 250px;
+                top: 100px;
+            
+            }
+            .box4 {
+                background: pink;
+                position: fixed;
+                bottom: 100px;
+                right: 100px;
+            }
+            .wrapper {
+                position: relative;
+                margin: 250px;
+                width: 800px;
+                height: 20000px;
+                border: 1px solid navy;
+            }
+
+        </style>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box4"></div>
+
+
+        <div class="wrapper">
+            <div class="box box3"></div>
+        </div>
+    </body>
+</html>
