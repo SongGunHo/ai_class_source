@@ -107,7 +107,7 @@ nav {
 nav a {
     width: 0;
     flex-grow: 1;
-    text-align: center;
+    text-align: center; /* text align center 글자를 가운데 배치 */
     line-height: 44px;/*가운데 배치 할때 사용하여 상하 높이를 맞춘다  */
     color:#494949;
 }
@@ -213,20 +213,18 @@ nav a {
 
 }
 .products .price-info span {
-    font-size: 1.39rem;
-    font-weight: 800;s
-    letter-spacing: -1px;
+
 
 }
 
 .products .price-info {
-    font-size: 1.154rem;
+    /* font-size: 1.154rem; */
        
 }
 .products .price-name {
-    font-size: 1.154rem;
+    /* font-size: 1.154rem;
     color: #3e3d3c;
-    word-break: break-all;
+    word-break: break-all; */
 }
 
 
