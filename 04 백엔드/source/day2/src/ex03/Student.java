@@ -5,4 +5,10 @@ public class Student {
     String name; // 이름
     String major; // 전공
 
+
+    void save(){
+        System.out.printf("id:%d, name:%s, major:%s%n" ,id, name,major);
+    }
+
+
 }
