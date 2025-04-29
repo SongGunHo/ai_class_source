@@ -10,24 +10,53 @@ public class Ex01 {
         items.add("이름3");
         items.add("이름4");
         items.add("이름5");
+//
+        for (String item : items){
+            if(items.lastIndexOf(-1) > 0){
+                items.clear();
+                System.out.println(item);
+            }else {
+               items.remove(items);
+            }
 
+        }
 
+            System.out.println(items);
+//            for (String item: items){
+//                items.remove(item);
+//                System.out.println(item); // items.toString ()
+//            }
 
-        for (int i =0;  i<items.size(); i++){
-
-
-            items.remove(i);
+//        for (int i =0;  i<items.size(); i++){
+//
+//
+//            items.remove(i);
 
 
 //            String name = items.get(i);
 //            System.out.println(name);
+
+
+
+        for(int i=0; i<items.size()-i; -- i){
+            items.remove(items);
+
         }
 
 
+//       for (String item : items){
+//           items.clear();
+//           System.out.println(item);
+//       }
 
 
 
-        System.out.println(items); // items.toString ()
+    }
+
+
+
+
+
 
 
 
@@ -61,5 +90,5 @@ public class Ex01 {
         }
         */
 
-    }
+
 }
