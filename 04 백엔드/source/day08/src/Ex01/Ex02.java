@@ -1,0 +1,27 @@
+package Ex01;
+
+import java.lang.reflect.Array;
+import java.lang.reflect.Constructor;
+
+public class Ex02 {
+    public static void main(String[] args) throws Exception{
+        Class<Ex01> cls = Ex01.class;
+
+        //Class  클래스 객체가 생성 될때 정의된 애노테이션 구현 객체도 생성
+        MyAnno myAnno = cls.getAnnotation(MyAnno.class); //
+        int min = myAnno.min();
+        int[] max = myAnno.max();
+        System.out.printf("min =%d, max=%s%n" , min, max);
+
+        Constructor<Ex01> con = cls.getConstructor(new Class[]{});
+        MyAnno myAnno1 = con.getAnnotation(MyAnno.class);
+        int min2 = myAnno1.min();
+        int[] max2 = myAnno1.max();
+        String value = myAnno1.value();
+        System.out.printf("min2=%d , max2=%d%n, value=%s%n" , min2, max2);
+
+
+
+
+    }
+}
