@@ -11,21 +11,21 @@ public class Ex01 {
         items.add("이름4");
         items.add("이름5");
 //
-        for (String item : items){
-            if(items.lastIndexOf(-1) > 0){
-                items.clear();
-                System.out.println(item);
-            }else {
-               items.remove(items);
-            }
-
-        }
+//        for (String item : items){
+//            if(items.lastIndexOf(-1) > 0){
+//                items.clear();
+//                System.out.println(item);
+//            }else {
+//               items.remove(items);
+//            }
+//
+//        }
 
             System.out.println(items);
-//            for (String item: items){
-//                items.remove(item);
-//                System.out.println(item); // items.toString ()
-//            }
+           for (String item: items){
+                items.remove(item);
+                System.out.println(item); // items.toString ()
+            }
 
 //        for (int i =0;  i<items.size(); i++){
 //
@@ -38,10 +38,10 @@ public class Ex01 {
 
 
 
-        for(int i=0; i<items.size()-i; -- i){
-            items.remove(items);
-
-        }
+//        for(int i=0; i<items.size()-i; -- i){
+//            items.remove(items);
+//
+//        }
 
 
 //       for (String item : items){

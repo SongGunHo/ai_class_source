@@ -42,13 +42,13 @@ public class Book implements Comparable<Book>{ // 강제
         //return isbn - o.isbn; // isbn 기준 오름 차순
         //return (isbn - o.isbn)*-1;
 
-//        return -(isbn -o.isbn);// 내림차순
+        return -(isbn -o.isbn);// 내림차순
 
         // author 기준의 오름 차순
         //return author.hashCode() - o.author.hashCode();
        // return author.compareTo(o.author);
         // author 기준의 내림 차순
-        return - author.compareTo(o.author);
+        //return - author.compareTo(o.author);
 
 
     }
