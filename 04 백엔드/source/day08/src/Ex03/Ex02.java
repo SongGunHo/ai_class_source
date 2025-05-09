@@ -1,10 +1,11 @@
 package Ex03;
 
 import java.util.HashSet;
+import java.util.TreeSet;
 
 public class Ex02 {
     public static void main(String[] args) {
-        HashSet<Book> items = new HashSet<>();
+        TreeSet<Book> items = new TreeSet<>();
         items.add(new Book(1000, "책1", "저자1", "출판사1"));
         items.add(new Book(1001, "책2", "저자2", "출판사2"));
         items.add(new Book(1002, "책2", "저자2", "출판사2"));

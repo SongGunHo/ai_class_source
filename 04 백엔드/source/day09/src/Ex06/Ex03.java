@@ -11,7 +11,8 @@ public class Ex03 {
         System.out.println(Arrays.toString(fruits2));
 
         List<String> fruits3 = List.of("사과","사과","사과" ,"오렌지", "망고", "멜론");
-        String [] fruits4 = fruits3.stream().skip(Comparator.reverseOrder()).distinct().map(s->"♡"+ s +"♡").toArray(String [] :: new);
-        System.out.println(Arrays.toString(fruits4));
+        //String [] fruits4 = fruits3.stream().skip(Comparator.reverseOrder()).distinct().map(s->"♡"+ s +"♡").toArray(String [] :: new);
+
+        //System.out.println(Arrays.toString(fruits4));
     }
-}
+} 
