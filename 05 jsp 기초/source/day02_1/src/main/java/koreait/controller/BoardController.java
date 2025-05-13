@@ -18,7 +18,7 @@ public class BoardController extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-        String key1 = config.getInitParameter("key1");
+        String key1 = config.g+etInitParameter("key1");
         String key2 = config.getInitParameter("key2");
         System.out.printf("key1=%s,key2=%s%n ",key1,key2);
         String common1 = config.getInitParameter("common1");

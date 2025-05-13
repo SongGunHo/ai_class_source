@@ -5,8 +5,8 @@
 <%@ page info="jsp연습" %>
 
 <%
-      List<String> items = List.of("사과");
-      out.writer(items.toString());
-      out.writer("<br>")
+      List<String> items = List.of("사과", "오렌지", "망고");
+      out.write(items.toString());
+      out.write("<br>");
 %>
 <%=getServletInfo()%>
