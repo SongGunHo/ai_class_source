@@ -1,15 +1,15 @@
 package org.koreait.member.dao;
 
+import org.koreait.configs.ManualBean;
 import org.koreait.member.entiis.Member;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
+@ManualBean
 @Repository
-public class MemberDAO {
+public class MemberDao {
     private Map<String , Member> members = new HashMap<>();
 
 

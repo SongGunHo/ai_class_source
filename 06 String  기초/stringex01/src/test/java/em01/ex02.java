@@ -5,7 +5,7 @@ import org.koreait.configs.AppCtx1;
 import org.koreait.configs.person.Greeter;
 import org.koreait.member.RequestJoin;
 import org.koreait.member.RequestLogin;
-import org.koreait.member.dao.MemberDAO;
+import org.koreait.member.dao.MemberDao;
 import org.koreait.member.servlces.ServlceJoin;
 import org.koreait.member.servlces.ServlceLoing;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -21,7 +21,7 @@ public class ex02 {
 
         ServlceJoin service = ctx.getBean("ServletJoin", ServlceJoin.class);
         ServlceLoing servlceLoing = ctx.getBean("ServlceLoing", ServlceLoing.class);
-        MemberDAO memberDao = ctx.getBean("memberDao", MemberDAO.class);
+        MemberDao memberDao = ctx.getBean("memberDao", MemberDao.class);
 
 
         RequestJoin form = new RequestJoin();

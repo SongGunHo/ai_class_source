@@ -1,21 +1,18 @@
 package org.koreait.configs;
 
-import org.koreait.member.dao.MemberDAO;
-import org.koreait.member.servlces.ServlceJoin;
-import org.koreait.member.servlces.ServlceLoing;
-import org.koreait.member.validator.JoinValidator;
-import org.koreait.member.validator.LoginValidator;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
+import org.koreait.member.dao.sub.MemberDao;
+import org.springframework.context.annotation.*;
 
 import java.time.format.DateTimeFormatter;
 
-@Import(DBConfig.class)
+//@Import(DBConfig.class)
 @Configuration
-@ComponentScan("org.koreait.member")
+//@ComponentScan("org.koreait.member")
+//@ComponentScan(basePackages = "org.koreait", excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = ManualBean.class))
+//@ComponentScan(basePackages = "org.koreait", excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = MemberDao.class))
+//@ComponentScan(basePackages = "org.koreait",excludeFilters =  @ComponentScan.Filter(type = FilterType.ASPECTJ, pattern = "org.koreait.member.dao,*Dao") )
+//@ComponentScan(basePackages = "org.koreait",excludeFilters =  @ComponentScan.Filter(type = FilterType.ASPECTJ, pattern = "org.koreait.member.dao..*Dao") )
+@ComponentScan(basePackages = "org.koreait", excludeFilters = @ComponentScan.Filter(type = FilterType.REGEX, pattern = "org.koreait.member\\..*Dao"))
 public class AppCtx1 {
     @Bean
     public DateTimeFormatter date (){
