@@ -1,5 +1,7 @@
 package org.koreait.member.servlces;
 
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.koreait.member.RequestLogin;
 import org.koreait.member.dao.MemberDao;
 import org.koreait.member.entiis.Member;
@@ -11,14 +13,15 @@ import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class ServlceLoing {
-    @Autowired
-    private MemberDao memberDAO;
-    @Autowired
+    @NonNull
+    private final MemberDao memberDAO;
+
     private LoginValidator validator;
-    @Autowired
+
     private DateTimeFormatter date = DateTimeFormatter.ofPattern("MM, dd");
-    @Autowired
+
     private Optional<MemberDao> opt;
 
 

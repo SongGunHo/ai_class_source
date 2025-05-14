@@ -12,8 +12,10 @@ public class ServlceJoin {
     private JoinValidator vaildator;
     private MemberDao memberDAO;
 
+
     @Autowired
-    public void setVaildator(JoinValidator vaildator ){
+    public void setVaildator(JoinValidator vaildator , MemberDao memberDAO ){
+        this.memberDAO = memberDAO;
         this.vaildator = vaildator;
     }
     public void setMemberDAO(MemberDao memberDAO){

@@ -2,6 +2,7 @@ package org.koreait.member.dao;
 
 import org.koreait.configs.ManualBean;
 import org.koreait.member.entiis.Member;
+import org.koreait.member.validator.JoinValidator;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
