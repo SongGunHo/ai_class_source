@@ -7,7 +7,10 @@ import org.koreait.member.Repositorys.MemberRepository;
 import org.koreait.member.entiits.Member;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.List;
 import java.util.Optional;
 
 @SpringJUnitConfig(AppCtx.class)
@@ -41,9 +44,43 @@ public class Ex03 {
     @Test
     @DisplayName("회원 목록 조회")
     void test3(){
-        Member member = repository.findById(3L).orElse(null);
+        List<Member> itmes = repository.findAll();
 
     }
+    @Test
+
+    void test4(){
+        Optional<Member> member  = repository.findByEmail("user01@text.org");
+        System.out.println(member);
+    }
+
+
+    @Test
+    void test5(){
+        LocalDateTime sdate = LocalDateTime.now().toLocalDate().atStartOfDay();
+        LocalDateTime edate = LocalDateTime.of(LocalDate.now(), LocalTime.of(59,59));
+
+        List<Member> items  = repository.findByRegDtBetweenOrderByRegDtDEsc(sdate, edate);
+        items.forEach(System.out::println);
+    }
+  @Test
+    void test6(){
+      LocalDateTime sdate = LocalDateTime.now().toLocalDate().atStartOfDay();
+      LocalDateTime edate = LocalDateTime.of(LocalDate.now(), LocalTime.of(59,59));
+
+
+      List<Member> items  = repository.findByRegDtBetweenAndNanmecontainingOrderByRegDtDEsc(sdate, edate, "사용자");
+      items.forEach(System.out::println);
+  }
+  @Test
+    void test7(){
+      LocalDateTime sdate = LocalDateTime.now().toLocalDate().atStartOfDay();
+      LocalDateTime edate = LocalDateTime.of(LocalDate.now(), LocalTime.of(59,59));
+
+      List<Member> items = repository.getMembers(sdate,edate,"%사용자 %");
+      items.forEach(System.out::println);
+  }
+
 
 
 }
