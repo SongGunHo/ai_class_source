@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJdbcRepositories("org.koreait")
+//@EnableJdbcRepositories("org.koreait")
 public class DBCon extends AbstractJdbcConfiguration {
     @Bean(destroyMethod = "close")
     public DataSource dataSource(){
