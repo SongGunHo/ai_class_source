@@ -2,6 +2,7 @@ package org.koreait.global.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration;
 import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
@@ -15,7 +16,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableTransactionManagement
 @EnableJdbcRepositories("org.koreait")
-public class DBCon {
+public class DBCon extends AbstractJdbcConfiguration {
     @Bean(destroyMethod = "close")
     public org.apache.tomcat.jdbc.pool.DataSource dataSource() {
         org.apache.tomcat.jdbc.pool.DataSource ds = new org.apache.tomcat.jdbc.pool.DataSource();
