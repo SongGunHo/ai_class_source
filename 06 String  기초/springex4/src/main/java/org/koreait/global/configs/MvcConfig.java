@@ -3,6 +3,9 @@ package org.koreait.global.configs;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.validation.Validator;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.servlet.config.annotation.*;
 
 @Configuration
@@ -10,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.*;
 @ComponentScan("org.koreait")
 @Import(ControllerConfig.class)
 public class MvcConfig implements WebMvcConfigurer {
+   // private JoinValidator validator;
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
@@ -35,4 +39,15 @@ public class MvcConfig implements WebMvcConfigurer {
     public void configureViewResolvers(ViewResolverRegistry registry) {
         registry.jsp("/WEB-INF/templates/", ".jsp");
     }
+
+//    @Override
+//    public Validator getValidator() {
+//        return validator;
+//    }
+    // membercontroller  공통 적용 validator
+//    @InitBinder
+//    public void InitBinder(WebDataBinder binder){
+//        binder.setValidator(joinValidator);
+//
+//    }
 }
