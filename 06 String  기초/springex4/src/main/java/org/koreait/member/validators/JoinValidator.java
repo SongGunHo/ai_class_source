@@ -1,5 +1,6 @@
 package org.koreait.member.validators;
 
+import com.sun.net.httpserver.Request;
 import lombok.RequiredArgsConstructor;
 import org.koreait.member.controllers.RequestJoin;
 import org.koreait.member.repository.MemberRepository;
@@ -19,12 +20,9 @@ public class JoinValidator implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-
         // Bean Validation API를 이용한 커맨드 객체 검증에 실패한 경우
         if (errors.hasErrors()) {
-            if (repository.existsByEmail(form.getEmail)){
-                errors.rejectValue("email", "Duplicated");
-            }
+            return;
         }
 
         /**

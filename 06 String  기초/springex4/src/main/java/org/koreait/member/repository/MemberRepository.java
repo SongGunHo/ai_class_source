@@ -5,11 +5,11 @@ import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Optional;
+
 public interface MemberRepository extends ListCrudRepository<Member, Long> {
-    default boolean existsByEmail(String email){
-        return exists(email)> 0;
-    }
-    @Query("SELECT * FROM MEMBER WHERE  email = email")
-    int exists(@Param("email") String email);
+
+    boolean existsByEmail(String email);
+    Optional<Member> findByEmail(String Email);
 }
 
