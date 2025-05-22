@@ -11,5 +11,4 @@
     </root>
 
     <logger name="org.springframework.jdbc" level="TRACE" />
-
 </configuration>

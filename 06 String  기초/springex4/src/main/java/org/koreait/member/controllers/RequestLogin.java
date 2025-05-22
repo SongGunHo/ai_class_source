@@ -10,10 +10,7 @@ public class RequestLogin {
 
     @NotBlank
     private String password;
-    private boolean saveEmail; // 이메일 기억 하기
+    private boolean saveEmail; // 이메일 기억하기
 
-    private String redirectUrl;
-
-
-
+    private String redirectUrl; // 로그인 성공시 이동할 주소
 }

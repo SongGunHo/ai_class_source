@@ -1,11 +1,15 @@
 package org.koreait.global.configs;
 
+import org.koreait.member.validators.JoinValidator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 import org.springframework.validation.Validator;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.servlet.config.annotation.*;
 
 @Configuration
@@ -13,7 +17,10 @@ import org.springframework.web.servlet.config.annotation.*;
 @ComponentScan("org.koreait")
 @Import(ControllerConfig.class)
 public class MvcConfig implements WebMvcConfigurer {
-   // private JoinValidator validator;
+
+//    @Autowired
+//    private JoinValidator joinValidator;
+
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
@@ -31,9 +38,10 @@ public class MvcConfig implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/company")
                 .setViewName("company/main");
-        registry.addViewController("/").setViewName("main/index");
 
 
+        registry.addViewController("/")
+                .setViewName("main/index");
     }
 
     @Override
@@ -41,14 +49,32 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.jsp("/WEB-INF/templates/", ".jsp");
     }
 
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer configurer() {
+        PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
+
+        String profile = System.getenv("spring.profiles.active");
+        String configFile = profile != null && profile.equals("prod") ? "application-prod" : "application";
+
+        configurer.setLocations(new ClassPathResource(configFile + ".properties"));
+
+        return configurer;
+    }
+
+
 //    @Override
 //    public Validator getValidator() {
-//        return validator;
+//        return joinValidator;
 //    }
-    // membercontroller  공통 적용 validator
-//    @InitBinder
-//    public void InitBinder(WebDataBinder binder){
-//        binder.setValidator(joinValidator);
-//
-//    }
+
+
+
+
+
+
+
+
+
+
+
 }

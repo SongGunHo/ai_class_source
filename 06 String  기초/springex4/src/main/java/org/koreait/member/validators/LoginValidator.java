@@ -1,10 +1,11 @@
 package org.koreait.member.validators;
 
+import com.sun.net.httpserver.Request;
 import lombok.RequiredArgsConstructor;
-import org.koreait.member.entits.Member;
-import org.koreait.member.repository.MemberRepository;
+import org.koreait.member.controllers.RequestLogin;
+import org.koreait.member.entities.Member;
+import org.koreait.member.repositories.MemberRepository;
 import org.mindrot.jbcrypt.BCrypt;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -14,8 +15,6 @@ import org.springframework.validation.Validator;
 public class LoginValidator implements Validator {
 
     private final MemberRepository repository;
-    private final RequestValidator requestValidator;
-
 
     @Override
     public boolean supports(Class<?> clazz) {
@@ -24,32 +23,27 @@ public class LoginValidator implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-        /**
-         * 이메일로 회원을 조회
-         * 조회된 회원의 비밀 번호가 일치 하는 지 케크
-         *
-         *
-          */
-        if (errors.hasErrors()){
-            return ;
+
+        if (errors.hasErrors()) {
+            return;
         }
+
+        /**
+         * 1. 이메일로 회원이 조회되는 지
+         * 2. 조회된 회원의 비밀번호가 일치하는지 체크
+         */
         RequestLogin form = (RequestLogin) target;
         String email = form.getEmail();
-        //1. 이메일 회원이 조회되는지
-        Member member= repository.findByEmail(email).orElse(null);
+        String password = form.getPassword();
+        // 1. 이메일로 회원이 조회되는 지
         Member member = repository.findByEmail(email).orElse(null);
         if (member == null) {
-            errors.rejectValue("email", "NotFound");
+           errors.reject("Invalid.login");
         }
 
         // 2. 조회된 회원의 비밀번호가 일치하는지 체크
         if (member != null && !BCrypt.checkpw(password, member.getPassword())) {
             errors.reject("Invalid.login");
-
-
         }
-
-
     }
-
 }

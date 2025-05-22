@@ -1,9 +1,8 @@
 package org.koreait.member.validators;
 
-import com.sun.net.httpserver.Request;
 import lombok.RequiredArgsConstructor;
 import org.koreait.member.controllers.RequestJoin;
-import org.koreait.member.repository.MemberRepository;
+import org.koreait.member.repositories.MemberRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -11,7 +10,8 @@ import org.springframework.validation.Validator;
 @Component
 @RequiredArgsConstructor
 public class JoinValidator implements Validator {
-    private MemberRepository repository;
+
+    private final MemberRepository repository;
 
     @Override
     public boolean supports(Class<?> clazz) {
@@ -20,6 +20,7 @@ public class JoinValidator implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
+
         // Bean Validation API를 이용한 커맨드 객체 검증에 실패한 경우
         if (errors.hasErrors()) {
             return;
@@ -32,6 +33,11 @@ public class JoinValidator implements Validator {
 
         RequestJoin form = (RequestJoin) target;
 
+        // 1. 중복 회원 체크
+        if (repository.existsByEmail(form.getEmail())) {
+            errors.rejectValue("email", "Duplicated");
+        }
+
         // 2. 비밀번호 확인
         String password = form.getPassword();
         String confirmPassword = form.getConfirmPassword();
@@ -40,11 +46,12 @@ public class JoinValidator implements Validator {
         }
 
         boolean globalError = true;
-        if(globalError){
-            errors.reject("commonError1", "공통에러1 발생");
+        if (globalError) {
+            errors.reject("commonError1", "공통 에러1 발생");
         }
-        if(globalError){
-            errors.reject("commonError2", "공통에러2 발생");
+
+        if (globalError) {
+            errors.reject("commonError2", "공통 에러2 발생");
         }
     }
 }
