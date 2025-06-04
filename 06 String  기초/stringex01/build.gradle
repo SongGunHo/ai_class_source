@@ -1,0 +1,23 @@
+plugins {
+    id 'groovy'
+}
+
+group = 'org.koreait'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.aspectj:aspectjweaver:1.9.24'
+    implementation 'org.springframework:spring-context:6.2.6'
+    compileOnly 'org.projectlombok:lombok:1.18.38'
+    implementation 'org.apache.groovy:groovy:4.0.14'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}

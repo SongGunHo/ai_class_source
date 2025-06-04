@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+    <script>
+        window.addEventListener("DOMContentLoaded" , function(){
+            const person ={
+                name :"이름",
+                age :25,
+            };
+            function eventHandler(){
+                console.log("this", this);
+            } 
+
+            eventHandler =eventHandler.bind(person);
+            const button = document.getElementById("button");
+            button.addEventListener("click") 
+            
+        });
+    </script>
+    <button type="button" id="button">클릭
+  
+    </button>
+</body>
+</html>
