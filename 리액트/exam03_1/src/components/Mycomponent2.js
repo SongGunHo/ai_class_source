@@ -10,9 +10,10 @@ class MyComponent2 extends Component {
 
     // }
 
+    const {color} = this.props; // 비구조화 할당 
 
     return (
-      <h1 style={{ backgroundColor: this.props.color }}>
+      <h1 style={{ backgroundColor: color }}>
         나의 멋진 컴포넌트(클래스형)
       </h1>
     );
