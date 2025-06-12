@@ -5,7 +5,7 @@ const App = () => {
   return (
     <>
       <MyComponent color="green" />
-      <MyComponent2 color="yellow" />
+      <MyComponent2 color="red" />
     </>
   );
 };

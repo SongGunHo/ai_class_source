@@ -1,6 +1,22 @@
-const MyComponent = (props) => {
+import { Component } from 'react';
 
-  return <h1>나의 멋진 컴포넌트(함수)</h1>;
-};
+class MyComponent2 extends Component {
+  render() {
+    // console.log('props', this.props);
+    // console.dir(Object.getOwnPropertyDescriptors(this.props));
+    // console.log('extensible', Object.isExtensible(this.props));
+    // const style ={
+    //     backgroundColor: this.props.color,
 
-export default MyComponent;
+    // }
+
+
+    return (
+      <h1 style={{ backgroundColor: this.props.color }}>
+        나의 멋진 컴포넌트(클래스형)
+      </h1>
+    );
+  }
+}
+
+export default MyComponent2;
