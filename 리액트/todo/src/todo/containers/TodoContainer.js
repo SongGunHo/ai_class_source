@@ -3,7 +3,7 @@ import TodoForm from '../components/TodoForm';
 import TodoItems from '../components/TodoItems';
 
 const TodoContainer = () => {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({}); //form 현재 입력한 폼 값 
   const [items, setItems] = useState([
     { id: 1, title: '할일1', content: '할일1 내용', checked: false },
     { id: 2, title: '할일2', content: '할일2 내용', checked: true },
@@ -12,7 +12,7 @@ const TodoContainer = () => {
   const [errors, setErrors] = useState({});
 
   const onSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // 를 사용해 기본 폼 재출 동작을 방지 한다 
 
     // 유효성 검사
     let hasErrors = false;
@@ -38,11 +38,14 @@ const TodoContainer = () => {
     // 양식 초기화
     setForm({});
   };
-
+  // 체크 박스 토클 처리 
   const onChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const onToggle =(id) =>{
+    setItems((prevItmes)=>prevItmes.map(item=>item.id=== id? ({...item,     checked: !item.checked}):item))
+  };
   return (
     <>
       <TodoForm
@@ -51,7 +54,7 @@ const TodoContainer = () => {
         form={form}
         errors={errors}
       />
-      <TodoItems items={items} />
+      <TodoItems items={items} onToggle={onToggle}/>
     </>
   );
 };

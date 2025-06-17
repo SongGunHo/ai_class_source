@@ -4,7 +4,7 @@ const TodoItems = ({ items }) => {
   return (
     <ul>
       {items.map((props) => (
-        <TodoItem key={props.id} {...props} />
+        <TodoItem key={props.id} {...props} onToggle={onToggle}/>
       ))}
     </ul>
   );
