@@ -1,13 +1,14 @@
 
 import TodoItem from './TodoItem';
-const TodoItems = ({items})=> {
-  return
-    <li>
-        {items.map({props})}=>{
-        <TodoItem>
-        }
-    </li>
-}
+const TodoItems = ({ items }) => {
+  return (
+    <ul>
+      {items.map((props) => (
+        <TodoItem key={props.id} {...props} />
+      ))}
+    </ul>
+  );
+};
 
 // const TodoItems = ({ items }) => {
 //   return (
