@@ -1,4 +1,4 @@
-import { FaPlusSquare } from 'react-icons/fa';
+import { FaPlusSquare } from 'react-icons/fa'; 
 
 const TodoForm = ({ onSubmit, onChange, form, errors }) => {
   return (

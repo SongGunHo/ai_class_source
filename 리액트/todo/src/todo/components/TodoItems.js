@@ -1,12 +1,21 @@
 
 import TodoItem from './TodoItem';
-const TodoItems = ({ items }) => {
+import { FaInfoCircle } from 'react-icons/fa';
+const TodoItems = ({ items, onToggle, onRemove, onRemoveAll }) => {
   return (
+    <>
     <ul>
       {items.map((props) => (
-        <TodoItem key={props.id} {...props} onToggle={onToggle}/>
+        <TodoItem 
+        key={props.id}
+         {...props} onToggle={onToggle}
+          onRemove={onRemove}
+          onRemoveAll={onRemoveAll}/>
       ))}
     </ul>
+    <button type='button'>선택 스케줄 삭제</button>
+    </>
+
   );
 };
 

@@ -4,14 +4,14 @@ import TodoItems from '../components/TodoItems';
 
 const TodoContainer = () => {
   const [form, setForm] = useState({}); //form 현재 입력한 폼 값 
-  const [items, setItems] = useState([
+  const [items, setItems] = useState([ // 할일 목록 (초기값 3개 )
     { id: 1, title: '할일1', content: '할일1 내용', checked: false },
     { id: 2, title: '할일2', content: '할일2 내용', checked: true },
     { id: 3, title: '할일3', content: '할일3 내용', checked: false },
   ]);
   const [errors, setErrors] = useState({});
 
-  const onSubmit = (e) => {
+  const onSubmit = (e) => { // 폼 제출 처리 
     e.preventDefault(); // 를 사용해 기본 폼 재출 동작을 방지 한다 
 
     // 유효성 검사
@@ -39,13 +39,21 @@ const TodoContainer = () => {
     setForm({});
   };
   // 체크 박스 토클 처리 
-  const onChange = (e) => {
+  const onChange = (e) => { // 입력 값 변경처리 
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const onToggle =(id) =>{
     setItems((prevItmes)=>prevItmes.map(item=>item.id=== id? ({...item,     checked: !item.checked}):item))
   };
+  // 스케쥴 하나 삭제 처리 
+   const onRemove = (id)=>{
+      setItems((prevItmes) => prevItmes.filter((items)=>items.id !== id))
+   };
+   // 선택된 스케쥴 일관 삭제 
+   const onRemoveAll =() =>{
+      setItems(items.filter(({checked})=> !checked));
+   };
   return (
     <>
       <TodoForm
@@ -54,7 +62,10 @@ const TodoContainer = () => {
         form={form}
         errors={errors}
       />
-      <TodoItems items={items} onToggle={onToggle}/>
+      <TodoItems items={items} 
+        onToggle={onToggle}
+        onRemove={onRemove}
+        onRemoveAll={onRemoveAll}/>
     </>
   );
 };
