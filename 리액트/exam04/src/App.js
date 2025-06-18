@@ -1,5 +1,11 @@
-import Counter from "./Counter";
+// import Counter from "./Counter";
+// const App =() =>{
+//   return <Counter/>
+// };
+import Todo from "./components/Todo";
+
 const App =() =>{
-  return <Counter/>
-};
+  return <Todo/>
+}
+
 export default App;

@@ -1,12 +1,20 @@
 import { useState } from "react";
 
-const Todo = () => {
-    const [items, setItems] = useState([
-        {id : 1 , title: '할일1'},
-        {id : 2 , title: '할일2'},
-        {id : 3 , title: '할일3'},
-    ]);
-    const [title, setTitle] = useState();
+function initalItems(){
+    return [...Todo(new Array(10)).keys()].map(i =>({id: i+1 , title: '할일${i}'}))
+}
+
+// const Todo = () => {
+//     const [items, setItems] = useState([
+//         {id : 1 , title: '할일1'},
+//         {id : 2 , title: '할일2'},
+//         {id : 3 , title: '할일3'},
+//     ]);
+    ocnst [itemsm, setItems] - 
+    const [title, setTitle] = useState('');
+    const onClick = () => {
+      setItems((prev) => prev.concat({ id: prev.length, title }));
+    };
     return (
         <>
             <input type="text" onChange={(e) => setTitle(e.target.value)} value={title}/>
