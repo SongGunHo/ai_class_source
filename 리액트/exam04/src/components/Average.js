@@ -1,4 +1,4 @@
-import { useState, useCallback,  useMemo } from "react";
+import React from "react";{ useState, useCallback,  useMemo } from "react";
 
 const getAverage =(item) =>{
     if(item.length === 0) return 0;
@@ -42,4 +42,4 @@ const Average=()=>{
 
 
 }
-export default Average;
+export default React.memo(Average);

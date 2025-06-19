@@ -1,3 +1,4 @@
+import React from "react";
 import AverageChild2 from "./Averagechild2"
 const AverageChild1 =() =>{
     console.log('AverageChild1랜더링')
