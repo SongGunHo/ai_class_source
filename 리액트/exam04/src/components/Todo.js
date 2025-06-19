@@ -21,6 +21,9 @@ const Todo = () => {
     const [cnt, setCnt] = useState(0);
     useEffect(() =>{
         console.log("숫자가 변경 됨", cnt);
+        return () =>{
+            console.log("뒷정리 함수 - 앞선 작업의 정리부분의 정의 ");
+        }
 
     }, [cnt]);// 실행 기준 비어 있으면 마운트 되었을때 1번 실행
 

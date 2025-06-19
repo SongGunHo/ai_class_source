@@ -2,10 +2,27 @@
 // const App =() =>{
 //   return <Counter/>
 // };
-import Todo from "./components/Todo";
+// import Todo from "./components/Todo";
+
+// const App =() =>{
+//   return <Todo/>
+// }
+
+// export default App;
+
+// import Counter2  from "./components/Counter2";
+
+//  const  Counter2 =() =>{
+//    return <Counter2/>
+//  }
+
+import Average from "./components/Average";
 
 const App =() =>{
-  return <Todo/>
+  return <Average/>
 }
+ export default App;
 
-export default App;
+
+
+
