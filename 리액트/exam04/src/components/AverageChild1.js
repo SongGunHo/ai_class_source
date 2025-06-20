@@ -6,6 +6,7 @@ const AverageChild1 =() =>{
     return (
       <>
         <h1>AverageChild1</h1>
+        <AverageChild2/>
       </>
     );
 }
