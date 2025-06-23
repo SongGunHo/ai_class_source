@@ -16,12 +16,18 @@
 //    return <Counter2/>
 //  }
 
-import Average from "./components/Average";
+// import Average from "./components/Average";
 
-const App =() =>{
-  return <Average/>
-}
- export default App;
+// const App =() =>{
+//   return <Average/>
+// }
+
+import Counter3  from "./components/Counter3";
+
+  const App =() =>{
+    return <Counter3/> 
+  }
+  export default App;
 
 
 
