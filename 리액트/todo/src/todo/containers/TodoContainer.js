@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { produce } from 'immer';
 import TodoForm from '../components/TodoForm';
 import TodoItems from '../components/TodoItems';
 
@@ -33,7 +34,10 @@ const TodoContainer = () => {
 
     if (hasErrors) return;
 
-    setItems(items.concat({ ...form, id: Date.now() }));
+    //setItems(items.concat({ ...form, id: Date.now() }));
+    setItems(produce(draft=>{
+      draft.push({...form, id: Date.now()})
+    }));
 
     // 양식 초기화
     setForm({});
@@ -48,7 +52,14 @@ const TodoContainer = () => {
   };
   // 스케쥴 하나 삭제 처리 
    const onRemove = (id)=>{
-      setItems((prevItmes) => prevItmes.filter((items)=>items.id !== id))
+      //setItems((prevItmes) => prevItmes.filter((items)=>items.id !== id))
+      // prevItmes :  이전의 상태의 값 (배열)
+      // filter : 조건에 맞는 항목만 남기는 배열 매서드 
+      // item.id! == id : id가 일치 하지 않는 항목만 남긴 즉 해당 id  를가짅 항목은 제거 됨 
+      const index = items.findIndex(item => item.id == id);
+      setItems(produce(draft=>{
+        draft.splice(index, 1, 0);
+      }));
    };
    // 선택된 스케쥴 일관 삭제 
    const onRemoveAll =() =>{
