@@ -35,6 +35,11 @@ const TodoContainer = () => {
     if (hasErrors) return;
 
     //setItems(items.concat({ ...form, id: Date.now() }));
+    // setitmes : useState로 선언한 상태로 업데티으 하는 함수 
+    // produce: immer 에서 제공 하는 함수로 초안 을 수정 하면 자동으로새로운 불변 객체를 생성 해준다 
+    // draft : 현재 상태 복사본 (임시 수정본 )
+    // form :  사용자가입력한 데이터 (예 입력폼의값 )
+    // ld:Date.now:  고유한 id  현재 시간 기준을생성
     setItems(produce(draft=>{
       draft.push({...form, id: Date.now()})
     }));
