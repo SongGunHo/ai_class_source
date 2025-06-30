@@ -1,34 +1,29 @@
-// import Counter from "./Counter";
-// const App =() =>{
-//   return <Counter/>
+// import Counter from './components/Counter';
+
+// const App = () => {
+//   return <Counter />;
 // };
-// import Todo from "./components/Todo";
+// import Todo from './components/Todo';
 
-// const App =() =>{
-//   return <Todo/>
-// }
+// const App = () => {
+//   return <Todo />;
+// };
 
-// export default App;
+// import Counter2 from './components/Counter2';
 
-// import Counter2  from "./components/Counter2";
+// const App = () => {
+//   return <Counter2 />;
+// };
 
-//  const  Counter2 =() =>{
-//    return <Counter2/>
-//  }
+// import Average from './components/Average';
 
-// import Average from "./components/Average";
+// const App = () => {
+//   return <Average />;
+// };
 
-// const App =() =>{
-//   return <Average/>
-// }
+import Counter3 from './components/Counter3';
+const App = () => {
+  return <Counter3 />;
+};
 
-import Counter3  from "./components/Counter3";
-
-  const App =() =>{
-    return <Counter3/> 
-  }
-  export default App;
-
-
-
-
+export default App;

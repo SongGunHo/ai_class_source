@@ -1,10 +1,11 @@
-import Mycomponent from './compent/Mycomponent';
-import MyComponent2 from './compent/MyCompoent2';
+import MyComponent from './components/MyComponent';
+import MyComponent2 from './components/MyComponent2';
+
 const App2 = () => {
   return (
     <>
-      <Mycomponent name="주예성" number="7" />;
-      <MyComponent2 />;
+      <MyComponent name="주예성" number={7} />
+      <MyComponent2 />
     </>
   );
 };

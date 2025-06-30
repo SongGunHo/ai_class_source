@@ -1,13 +1,15 @@
-import React from "react";
-import AverageChild2 from "./Averagechild2"
-const AverageChild1 =() =>{
-    console.log('AverageChild1랜더링')
+import React from 'react';
+import AverageChild2 from './AverageChild2';
 
-    return (
-      <>
-        <h1>AverageChild1</h1>
-        <AverageChild2/>
-      </>
-    );
-}
-export default AverageChild1
+const AverageChild1 = () => {
+  console.log('AverageChild1 렌더링!');
+
+  return (
+    <>
+      <h1>AverageChild1</h1>
+      <AverageChild2 />
+    </>
+  );
+};
+
+export default React.memo(AverageChild1);
