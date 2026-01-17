@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+</head>
+<body>
+    <script>
+        window.addEventListener("DOMContentLoaded" , function(){
+            const button = document.getElementById("button");
+            button.addEventListener("click" , function (e){// e 이벤트 객체 라는 것 
+                console.log("this", this);// 화살표 함수는 값을 못 바꾼다 하지만 window 로 가능   
+                console.log("e.target", e.target);// 
+                console.log("e.currentTarget", e.currentTarget);// 이베트를 부여 함 
+            });
+        });
+    </script>
+    <button type="button" id="button">
+  
+    </button>
+</body>
+</html>

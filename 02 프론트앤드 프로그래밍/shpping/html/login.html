@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뉴마커스</title>
+</head>
+<body>
+    <!-- 상단 메뉴 -->
+    <header>
+        <div class="btn-menu">
+            <a href="#">
+                <img src="../imge/more_btn.png" alt="메뉴">
+            </a>
+        </div>
+        <div class="c-logo">
+            <a href="#">
+                <img src="../imge/logo.png" alt="로고">
+            </a>
+        </div>
+        <div class="bnt-sear">
+            <a href="#">
+                <img src="../imge/search.png" alt="검색">
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                <img src="../imge/person.png" alt="로그인">
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                <img src="../imge/cart.png" alt="장바 구니">
+            </a>
+        </div>
+        <h2>로그인</h2>
+    </header>
+    <!-- 중간-->
+    <nav>
+        <div class="login-form">
+            <form action="login" method="post">
+                <input type="text" id="mId" placeholder="아이디">
+                <input type="text" id="mPw" placeholder="비밀 번호">
+                <input type="submit" id="loign" value="로그인">
+                <input type="submit" id="jloign" value="로그인 유지">
+                <input type="checkbox" id="sId"> 아이디 저장
+                <input type="submit" id="nId" value="아이디 찾기">
+                <input type="submit" id="nPw" value="비밀 번호 찾기">
+                <input type="submit" id="join" value="회원 가입">
+            </form>
+        </div>    
+    </nav>
+    <!--메인 메뉴 -->
+    <main>
+        <h4>SNS 간편 로그인</h4>
+        <div class="sns-login"> 
+            <a href="#">
+                <img src="../imge/kakao_login.png" alt="카카오톡">
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                <img src="../imge/naver_login.png" alt="네이버">
+            </a>
+        </div>
+    </main>
+    <!-- 하단 메뉴-->
+     <footer>
+        <h5>비회원 주문 조회 하기</h5>
+        <form action="bjoin" method="post">
+            <input type="text" id="bId" placeholder="주문자 명">
+            <input type="text" id="bNu" placeholder="주문자 번호">
+            <input type="submit" id="click" value="확인">
+        </form>
+        <h6>! 주문 번호와 비밀 번호를 잃어 버렸을 경우 고객 센터로 문의 하여 주시기 바랍니다</h6>
+     </footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+<script>
+    window.addEventListener("DOMContentLoaded" ,function(){
+        // const e1 = document.getElementById("button");
+        // const cosutn = document.getElementById("e1");
+        // if(button == cosutn){
+        //     alert("확인");
+        // }else {
+            
+        // }
+        // const  e1 = document.getElementById("button");
+        // e1.onclick = function (){
+        //     alert("확인 1번");
+        // }
+        // el.onclick = function (){
+        //     alert("확인 2번");
+        // }
+        const  e1 = document.getElementById("button");
+        e1.addEventListener("click", function(){
+            alert("1번");
+        });
+        e1.addEventListener("click", function(){
+            alert("2번");
+        });
+    });
+</script>
+<body>
+    <button type="button" id="button">클릭</button>
+</body>
+
+
+</html>
